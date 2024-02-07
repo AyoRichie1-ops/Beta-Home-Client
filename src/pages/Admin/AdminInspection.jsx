@@ -16,13 +16,13 @@ import 'react-toastify/dist/ReactToastify.css';
 const AdminInspection = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [inspections, setInpections] = useState([])
-  const {BASE_URL} = useGlobalContext()
+  const {Base_Url} = useGlobalContext()
   const token = localStorage.getItem('token')
 
   const getInspection = async () => {
 
       try {
-        const {data} = await axios(`${BASE_URL}/inspection`, 
+        const {data} = await axios(`${Base_Url}/inspection`, 
         {
           headers: { Authorization: `Bearer ${token}`}
         })
